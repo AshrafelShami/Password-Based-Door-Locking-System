@@ -4,7 +4,7 @@
 
 #include "../Prototypes/RTC_Prototypes.h"
 
-#define DS1307				0xD0
+#define DS1307			0xD0
 #define SECONDS_REGISTER	0x00
 #define MINUTES_REGISTER	0x01
 #define HOURS_REGISTER		0x02
