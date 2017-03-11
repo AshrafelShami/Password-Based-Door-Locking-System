@@ -8,8 +8,8 @@
 */
 
 void Keypad_Init( vu8* R_PORT, vu8* L_PORT,
-				   u8 ROW0, u8 ROW1, u8 ROW2, u8 ROW3,
-				   u8 LIN0, u8 LIN1, u8 LIN2, u8 LIN3){
+		u8 ROW0, u8 ROW1, u8 ROW2, u8 ROW3,
+		u8 LIN0, u8 LIN1, u8 LIN2, u8 LIN3){
 	ROW_Port	= R_PORT;	R0 = ROW0;	R1 = ROW1;	R2 = ROW2;	R3 = ROW3;
 	LINE_Port	= L_PORT;	L0 = LIN0;	L1 = LIN1;	L2 = LIN2;	L3 = LIN3;
 
