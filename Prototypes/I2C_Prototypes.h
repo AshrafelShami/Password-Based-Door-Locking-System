@@ -18,5 +18,4 @@ u8   I2C_Read_With_ACK          ( u8 ACK );
 
 void I2C_Restart                ( void );
 
-
 #endif /* FUNCTION_PROTOTYPES_H_ */   
