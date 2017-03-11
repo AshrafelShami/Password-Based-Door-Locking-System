@@ -19,8 +19,8 @@ u8 L2;
 u8 L3;
 
 #define Check_ALL_Lines		 (((*LINE_Port & (1U << L0)) >> L0)\
-&((*LINE_Port & (1U << L1)) >> L1)\
-&((*LINE_Port & (1U << L2)) >> L2)\
-&((*LINE_Port & (1U << L3)) >> L3))
+                                 &((*LINE_Port & (1U << L1)) >> L1)\
+                                 &((*LINE_Port & (1U << L2)) >> L2)\
+                                 &((*LINE_Port & (1U << L3)) >> L3))
 
 #endif /* KEYPAD_COMFIG_H_ */
