@@ -1,10 +1,3 @@
-/*
- * Function_Prototypes.h
- *
- * Created: 2/24/2017 3:35:53 PM
- *  Author: HP
- */ 
-
 
 #ifndef LCD_PROTOTYPES_H_
 #define LCD_PROTOTYPES_H_
@@ -21,7 +14,6 @@ void LCD_Sync_Data_Pins ( u8 Value );
 void LCD_BasyFlag_Check	( void );
 void LCD_Clear		( void );
 void LCD_Clear_Pixel	( u8 X, u8 Y );
-
 
 void LCD_MENU_PW	( void );
 void LCD_MENU_Start	( void );
