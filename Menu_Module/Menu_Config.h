@@ -9,5 +9,4 @@
 #endif
 #include <util/delay.h>
 
-
 #endif /* MENU_CONFIG_H_ */
