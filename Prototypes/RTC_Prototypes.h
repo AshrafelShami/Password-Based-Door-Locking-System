@@ -4,7 +4,7 @@
 
 #include "../Datatypes/DataTypes.h"
 
-u8 RTC_Read			( u8 Register_Pointer );
+u8 RTC_Read		( u8 Register_Pointer );
 void RTC_Update		( void );
 void RTC_Set_Time	( u8 Sec, u8 Min, u8 Hrs );
 void RTC_Set_Date	( u8 Day, u8 Mon, u8 Yrs );
