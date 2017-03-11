@@ -19,5 +19,4 @@ u8 D2;		/*	Data_1 Pin	*/
 u8 D3;		/*	Data_1 Pin	*/
 u8 D4;		/*	Data_1 Pin	*/
 
-
 #endif /* LCD_CONFIG_H_ */
