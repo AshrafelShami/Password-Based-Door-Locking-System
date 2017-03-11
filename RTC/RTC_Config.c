@@ -14,25 +14,25 @@ u8 RTC_Date [6]	= {0};
 ********************************************************************************************/
 void RTC_Update ( void ){
 	u8 i = 0;
-	RTC.Hours		= RTC_Read( HOURS_REGISTER		);
-	RTC_Time[i]		= ((RTC.Hours >> 4) & 0x03) + '0';
-	RTC_Time[i+1]	= (RTC.Hours & 0x0F)		+ '0';
-	RTC.Minutes		= RTC_Read( MINUTES_REGISTER	);
-	RTC_Time[i+2]   = (RTC.Minutes >> 4)   + '0';
-	RTC_Time[i+3]	= (RTC.Minutes & 0x0F) + '0';
-	RTC.Seconds		= RTC_Read( SECONDS_REGISTER	);
-	RTC_Time[i+4]	= (RTC.Seconds >> 4)   + '0';
-	RTC_Time[i+5]	= (RTC.Seconds & 0x0F) + '0';	
+	RTC.Hours	= RTC_Read( HOURS_REGISTER	);
+	RTC_Time[i]	= ((RTC.Hours >> 4) & 0x03) + '0';
+	RTC_Time[i+1]	= (RTC.Hours & 0x0F)	    + '0';
+	RTC.Minutes	= RTC_Read( MINUTES_REGISTER	);
+	RTC_Time[i+2]   = (RTC.Minutes >> 4)        + '0';
+	RTC_Time[i+3]	= (RTC.Minutes & 0x0F)      + '0';
+	RTC.Seconds	= RTC_Read( SECONDS_REGISTER	);
+	RTC_Time[i+4]	= (RTC.Seconds >> 4)        + '0';
+	RTC_Time[i+5]	= (RTC.Seconds & 0x0F)      + '0';	
 
-	RTC.Days		= RTC_Read( DAYS_REGISTER		);
-	RTC_Date[i]		= ((RTC.Days >> 4) & 0x03)	 + '0';
-	RTC_Date[i+1]	= (RTC.Days  & 0x0F)		 + '0';
-	RTC.Months		= RTC_Read( MONTHS_REGISTER		);
-	RTC_Date[i+2]   = ((RTC.Months >> 4) & 0x01) + '0';
-	RTC_Date[i+3]	= (RTC.Months  & 0x0F)	     + '0';
-	RTC.Years		= RTC_Read( YEARS_REGISTER		);
-	RTC_Date[i+4]   = ((RTC.Years >> 4) & 0x0F)	 + '0';
-	RTC_Date[i+5]	= (RTC.Years  & 0x0F)	     + '0';
+	RTC.Days	= RTC_Read( DAYS_REGISTER	);
+	RTC_Date[i]	= ((RTC.Days >> 4) & 0x03)  + '0';
+	RTC_Date[i+1]	= (RTC.Days  & 0x0F)	    + '0';
+	RTC.Months	= RTC_Read( MONTHS_REGISTER	);
+	RTC_Date[i+2]   = ((RTC.Months >> 4) & 0x01)+ '0';
+	RTC_Date[i+3]	= (RTC.Months  & 0x0F)	    + '0';
+	RTC.Years	= RTC_Read( YEARS_REGISTER	);
+	RTC_Date[i+4]   = ((RTC.Years >> 4) & 0x0F) + '0';
+	RTC_Date[i+5]	= (RTC.Years  & 0x0F)	    + '0';
 }
 
 /********************************************************************************************
