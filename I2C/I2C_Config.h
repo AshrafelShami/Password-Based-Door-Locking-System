@@ -22,7 +22,7 @@ typedef enum{
 	}Interrupt;
 
 typedef struct{
-	SCL			SCL_Freq;
+	SCL		SCL_Freq;
 	Interrupt	Interrupt_Sel;
 	}Struct_I2C;
 
