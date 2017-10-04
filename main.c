@@ -1,11 +1,11 @@
-/*		OS System Include Files			*/
+/*				OS System Include Files				*/
 #include "FreeRTOS/FreeRTOS.h"
 #include "FreeRTOS/task.h"
 #include "FreeRTOS/queue.h"
 #include "FreeRTOS/semphr.h"
 #include "FreeRTOS/event_groups.h"
 
-/*		Included Project Files			*/
+/*				Included Project Files				*/
 #include "Prototypes/Password_Prototypes.h"
 #include "Prototypes/Keypad_Prototypes.h"
 #include "Prototypes/EEPROM_Prototypes.h"
@@ -15,22 +15,22 @@
 #include "I2C/I2C_Config.h"
 #include "RTC/RTC_Config.h"
 
-/*      Tasks and functions declaration			*/
+/*    	  Tasks and functions declaration			*/
 void T_Menu		( void * pvData );
 void T_RTC		( void * pvData );
-void T_EEPROM		( void * pvData );	
+void T_EEPROM	( void * pvData );	
 
 void System_Init	( void );
 
-/*		Service declaration.			*/
+/*				Service declaration.				*/
 xSemaphoreHandle	Save_In_EEPROM;
 
-/*	 	  Global Variables			*/
+/*	 			  Global Variables					*/
 extern u8 Password  [4];
 extern u8 User_Login_Date[16];
 
 int main(void){
-	/*			System Initialization		*/
+	/*				System Initialization			*/
 	System_Init();
 	 
 	/*	OS service Creation and initialization		*/
@@ -39,7 +39,7 @@ int main(void){
 	/*	Tasks Creation	*/
 	xTaskCreate (T_Menu	, NULL, 100, NULL, 1, NULL);
 	xTaskCreate (T_RTC	, NULL, 100, NULL, 2, NULL);
-	xTaskCreate (T_EEPROM	, NULL, 100, NULL, 3, NULL);
+	xTaskCreate (T_EEPROM, NULL, 100, NULL, 3, NULL);
 	
 	/*	Start the OS	*/
 	vTaskStartScheduler();
@@ -54,10 +54,10 @@ void T_Menu(void * pvData){
 			case 1: Password_Enter();
 				User_Login();
 				xSemaphoreGive
-				(Save_In_EEPROM);	break;
+				(Save_In_EEPROM);		break;
 			case 2: LCD_MENU_Time();	break;
 			case 3: LCD_MENU_Date();	break;
-			default:			break;
+			default:					break;
 		}
 	}
 }
@@ -81,15 +81,15 @@ void System_Init( void ){
 	/*			LED pins Initialization			*/
 	DDRB = (1 << 2)|(1 << 5);
 	
-	/*			LCD Initialization			*/
+	/*			LCD Initialization				*/
 	LCD_Init(&PINC, &PINC, 2, 1, 0, 3, 4, 5, 6);
 	
 	/*			Keypad Initialization			*/
 	Keypad_Init(&PINA, &PINA, 0, 1, 2, 3, 4, 5, 6, 7);
 	
-	/*			I2C Initialization			*/
+	/*			I2C Initialization				*/
 	Struct_I2C I2C_Init_Struct;
-	I2C_Init_Struct.SCL_Freq	=	SCL_100K;
+	I2C_Init_Struct.SCL_Freq		=	SCL_100K;
 	I2C_Init_Struct.Interrupt_Sel	=	Disable;
 	I2C_Init(I2C_Init_Struct);
 }
